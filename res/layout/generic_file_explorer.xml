@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="#ff666666"
+	>
+	<ListView
+		android:id="@+id/file_explorer_file_list"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_above="@+id/file_explorer_button_bar"
+		android:listSelector="@drawable/list_row_pressed_indicator_light" 
+		android:drawSelectorOnTop="true"
+		android:layout_margin="3dip"
+		/>
+	<TextView
+		android:id="@+id/file_explorer_noMatches_indicator"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_above="@+id/file_explorer_button_bar"
+		android:layout_margin="10dip"
+		android:text="No matching files in this directory"
+		android:visibility="gone"
+		/>
+	<LinearLayout
+		android:id="@+id/file_explorer_button_bar"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:orientation="horizontal"
+		>
+		<Button
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="0.33"
+			android:text="Cancel"
+			android:onClick="fileExplorerCancelExploring"
+			/>
+		<Button
+			android:id="@+id/file_explorer_up_button"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="0.33"
+			android:text="Up"
+			android:onClick="fileExplorerGoToParentDirectory"
+			/>
+		<Button
+			android:id="@+id/file_explorer_use_button"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="0.33"
+			android:text="Use"
+			android:onClick="fileExplorerUseSelectedFile"
+			/>
+	</LinearLayout>  
+</RelativeLayout>
